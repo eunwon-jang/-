@@ -10,20 +10,10 @@
 - 결과 보고서 (PDF 포함)
 
 ## 💻 실행 방법
-![Uploading image.png…]()
+
 
 ## 🧪 시뮬레이션 코드
 
-- [step_response.m](simulation/step_response.m) → Step 응답 시뮬레이션
-- [sine_input.m](simulation/sine_input.m) → 사인파 입력 응답
-- [bump_input.m](simulation/bump_input.m) → 노면 요철 입력 응답
-
-```matlab
-% 일부 예시만 보여주기
-t = 0:0.001:5;
-z_input = 0.05 * sin(2*pi*1*t);
-[y, t_out, x_out] = lsim(sys, z_input, t);
-plot(t_out, y)
 
 - RMS 가속도: **331.11 m/s²**
 - 전달함수:
