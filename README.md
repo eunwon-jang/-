@@ -29,12 +29,61 @@
 
 ## 🔧 모델 구성
 
-- 2 DOF Quarter Car Model 사용
-- Newton 및 Lagrangian 기반 수식 유도
-- State-Space 모델 구성
+# Quarter-Car Suspension Model
 
-모델 상세 유도는 [`model/equations.md`](model/equations.md) 참조
+본 프로젝트에서 사용된 Quarter-Car 서스펜션 시스템은 다음과 같이 구성됩니다:
 
+---
+
+## 시스템 개념도 (Free Body Diagram)
+
+![Quarter Car FBD](model/free_body_diagram.png)
+
+*(주의: 깃허브에 이미지를 `model/` 폴더에 저장하고 위 링크에 연결)*
+
+---
+
+## 변수 정의
+
+| 기호 | 설명 |
+|------|------|
+| \( m_1 \) | 차체 질량 (Sprung mass) |
+| \( m_2 \) | 타이어 및 서스펜션 질량 (Unsprung mass) |
+| \( k_1 \) | 서스펜션 스프링 강성 |
+| \( b_1 \) | 감쇠기(댐퍼) 감쇠 계수 |
+| \( k_2 \) | 타이어 강성 |
+| \( z(t) \) | 노면 입력 (도로 요철 등 외란) |
+| \( x_1(t) \) | 차체 위치 |
+| \( x_2(t) \) | Unsprung mass 위치 (서스펜션 하부) |
+
+---
+
+## 시스템 입력/출력
+
+- **입력** : \( z(t) \) — 도로의 요철/노면 외란
+- **출력** : \( x_1(t) \), \( x_2(t) \) — 차체 및 현가 시스템 변위
+
+---
+
+## 수식 유도
+
+운동 방정식은 뉴턴의 운동 법칙을 기반으로 다음과 같이 유도됩니다:
+
+**Sprung Mass (m₁):**
+
+\[
+m_1 \ddot{x}_1 = -k_1 (x_1 - x_2) - b_1 (\dot{x}_1 - \dot{x}_2)
+\]
+
+**Unsprung Mass (m₂):**
+
+\[
+m_2 \ddot{x}_2 = k_1 (x_1 - x_2) + b_1 (\dot{x}_1 - \dot{x}_2) - k_2 (x_2 - z)
+\]
+
+---
+
+이 수식을 기반으로 상태방정식 및 전달함수를 구성하여 시뮬레이션을 수행합니다.
 ---
 
 ## 🧪 시뮬레이션
