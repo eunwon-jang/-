@@ -1,11 +1,7 @@
 # Quarter Car Suspension System Modeling & Simulation
 
-본 프로젝트는 차량 서스펜션 시스템의 1/4 모델을 바탕으로 
-모델링, 수치해석, 그리고 제어 시스템 해석을 수행한 결과를 정리한 것입니다.
-
 ---
 
-## 📌 프로젝트 목적
 ## 📌 문제 정의 (Problem Statement)
 
 자동차는 주행 중 도로의 요철이나 장애물 등 다양한 외란(external disturbance)에 지속적으로 노출됩니다. 이러한 외란은 차량의 승차감(Ride Comfort), 조종 안정성(Handling Stability), 그리고 탑승자의 피로도에 직접적인 영향을 미칩니다.  
